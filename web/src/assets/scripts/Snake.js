@@ -15,7 +15,7 @@ export class Snake extends AcGameObject {
 
         this.speed = 5;//每秒钟走5个格子
         this.direction = -1;//表示没有指令    0，1，2，3
-        this.status = "idle";//idle表示不动,move表示正在移动，die表示死亡
+        this.status = "idle";//idle表示不动,move表示正在移动，die表示死亡  dd
 
         this.dr = [-1, 0, 1, 0];
         this.dc = [0, 1, 0, -1];//表示4个方向列的偏移量
