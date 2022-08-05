@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.management.Query;
 import java.util.List;
 
 @RestController
@@ -31,14 +30,15 @@ public class UserController {
         return userMapper.selectOne(queryWrapper);
     }
 
-    @GetMapping("/user/add/{userId}/{username}/{password}/")
+    @GetMapping("/user/add/{userId}/{username}/{password}/{photo}/")
     public String addUser(
             @PathVariable int userId,
             @PathVariable String username,
             @PathVariable String password) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(password);
-        User user =new User(userId,username,encodedPassword);
+        String photo ="";
+        User user =new User(userId,username,encodedPassword,photo);
         userMapper.insert(user);
         return "Add User Successfully";
     }
