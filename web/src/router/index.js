@@ -34,17 +34,17 @@ const routes = [
     }
   },
   {
-    path: "/404/",
-    name: "404_index",
-    component: NotFound,
-    meta: {
-      requestAuth: false,
-    }
-  },
-  {
     path: "/ranklist/",
     name: "ranklist_index",
     component: RanklistIndexView,
+    meta: {
+      requestAuth: true,
+    }
+  },
+  {
+    path: "/user/bot/",
+    name: "user_bot_index",
+    component: UserBotIndexView,
     meta: {
       requestAuth: true,
     }
@@ -66,11 +66,11 @@ const routes = [
     }
   },
   {
-    path: "/user/bot/",
-    name: "user_bot_index",
-    component: UserBotIndexView,
+    path: "/404/",
+    name: "404",
+    component: NotFound,
     meta: {
-      requestAuth: true,
+      requestAuth: false,
     }
   },
   {
