@@ -1,7 +1,7 @@
 package com.kob.backend.controller.user.bot;
 
 
-import com.kob.backend.service.user.bot.RemoveService;
+import com.kob.backend.controller.service.user.bot.RemoveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
