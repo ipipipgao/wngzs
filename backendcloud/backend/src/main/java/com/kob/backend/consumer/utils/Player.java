@@ -13,6 +13,8 @@ import java.util.List;
 public class Player {
 
     private Integer id;
+    private Integer botId;  //为-1 表示亲自出马，否则就是AI
+    private String botCode;
     private Integer sx;
     private Integer sy;
     private List<Integer> steps;
@@ -47,4 +49,5 @@ public class Player {
         }
         return res.toString();
     }
+
 }
