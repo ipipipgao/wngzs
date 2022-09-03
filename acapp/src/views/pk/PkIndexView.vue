@@ -1,24 +1,4 @@
 <template>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary rule-class" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        游戏规则
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title float-center" id="exampleModalLabel">游戏规则</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    游戏规则：玩家可以自己或者派出一名bot上阵，通过键盘的wdsa或者小键盘（就是4399小游戏人物的移动方式）控制蛇的移动。<br>两方玩家都输入蛇的移动信息之后，两条蛇就会同时移动一格，
-                    如果蛇撞墙或者撞到蛇的身体，就输了。如果你5秒钟之内不输入蛇的移动信息，也会输
-                </div>
-            </div>
-        </div>
-    </div>
     <PlayGround v-if="$store.state.pk.status === 'playing'" />
     <MatchGround v-if="$store.state.pk.status === 'matching'" />
     <ResultBoard v-if="$store.state.pk.loser != 'none'" />
@@ -66,7 +46,6 @@ export default {
             }
 
             socket.onmessage = msg => {
-                console.log("wzsisho");
                 const data = JSON.parse(msg.data);
                 if (data.event === "start-matching") {    //匹配成功
                     store.commit("updateOpponent", {
@@ -117,9 +96,5 @@ div.user-color {
     color: white;
     font-size: 30px;
     font-weight: 600;
-}
-
-.rule-class {
-    margin-left: 80px;
 }
 </style>

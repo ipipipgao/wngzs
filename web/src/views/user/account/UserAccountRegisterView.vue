@@ -17,7 +17,7 @@
                         <input v-model="confirmedPassword" type="password" class="form-control" id="confirmedpassword"
                             placeholder="请再次输入密码">
                     </div>
-                    <div class="error-message">{{ error_message }}</div>
+                    <div class="error-message">{{  error_message  }}</div>
                     <button type="submit" class="btn btn-primary">提交</button>
                 </form>
             </div>
@@ -43,7 +43,7 @@ export default {
 
         const register = () => {
             $.ajax({
-                url: "http://127.0.0.1:3521/user/account/register/",
+                url: "https://app3226.acapp.acwing.com.cn/api/user/account/register/",
                 type: "post",
                 data: {
                     username: username.value,

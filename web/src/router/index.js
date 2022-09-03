@@ -7,6 +7,7 @@ import RecordContentView from '../views/record/RecordContentView'
 import UserBotIndexView from '../views/user/bot/UserBotIndexView'
 import UserAccountLoginView from '../views/user/account/UserAccountLoginView'
 import UserAccountRegisterView from '../views/user/account/UserAccountRegisterView'
+import RuleView from '../views/RuleView'
 import store from '../store/index'
 
 
@@ -81,6 +82,14 @@ const routes = [
     component: NotFound,
     meta: {
       requestAuth: false,
+    }
+  },
+  {
+    path: "/rule/",
+    name: "rule",
+    component: RuleView,
+    meta: {
+      requestAuth: true,
     }
   },
   {
