@@ -14,10 +14,18 @@ export default {
         b_sy: 0,
         gameObject: null,
         loser: "none",  //none表示没人输，all，A，B
+        dd: -1,
     },
     getters: {
     },
     mutations: {
+        click_direction(state, directi) {
+            state.socket.send(JSON.stringify({
+                event: "move",
+                direction: directi,
+            }));
+            console.log(directi);
+        },
         updateSocket(state, socket) {
             state.socket = socket;
         },

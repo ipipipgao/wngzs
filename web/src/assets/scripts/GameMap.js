@@ -2,7 +2,6 @@ import { AcGameObject } from "./AcGameObject";
 import { Wall } from "./Wall";
 import { Snake } from "./Snake";
 
-
 export class GameMap extends AcGameObject {
 
     //constructor是画布
@@ -46,8 +45,6 @@ export class GameMap extends AcGameObject {
     add_listening_events() {
         if (this.store.state.record.is_record) {
             let k = 0;
-
-
             const a_steps = this.store.state.record.a_steps;
             const b_steps = this.store.state.record.b_steps;
             const loser = this.store.state.record.record_loser;
